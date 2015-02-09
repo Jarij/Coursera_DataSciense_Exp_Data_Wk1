@@ -12,6 +12,10 @@ myTable <- read.table("C://Users//jari//Data_Science//working_Dir//household_pow
 # Check the column names and structure
 head(myTable)
 
+# convert Date and Time variables to "Date/Time- class"
+# Time part needed in the plot3
+myTable$Time <- strptime(paste(myTable$Date, myTable$Time), "%d/%m/%Y %H:%M:%S")
+
 # Date Structure update 16/12/2006 -> 2006-12-16 as given in the instructions
 myTable$Date <- as.Date(myTable$Date, "%d/%m/%Y")
 
